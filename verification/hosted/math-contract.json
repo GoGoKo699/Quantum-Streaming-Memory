@@ -22,6 +22,24 @@
       "required_text": [
         "D>B"
       ]
+    },
+    {
+      "path": "science/feedback_protocol.md",
+      "index": 33,
+      "source_sha256": "959e5014865913e56942020d6d41d705fa840e616b623c33b27814139a292a69",
+      "expected_text": "bj=(r+j)modD,0≤j<D."
+    },
+    {
+      "path": "science/no_feedback_protocol.md",
+      "index": 68,
+      "source_sha256": "00850ebfa16b4f967ceab344ef4cb2826d8be794f1669c8031b282ed399cd310",
+      "expected_text": "t−B<j≤t."
+    },
+    {
+      "path": "science/converse.md",
+      "index": 94,
+      "source_sha256": "8b71063ce792fb92c87ccf379beaa3f7c65879f5831885fd79f268942635f003",
+      "expected_text": "S(Q∣YZ)=∑y,zpyp(z∣y)S(TrE0|ψyz⟩⟨ψyz|)."
     }
   ]
 }

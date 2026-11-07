@@ -77,7 +77,7 @@ Both use sender storage $`O(kB)`$, recover every source by its deadline, and ret
 M_{\min}=\Theta\!\left(k\min\{D,B\}\right)
 ```
 
-for the required receiver hardware of sustained streams, at fixed forward rate $`k/n=1/3`$ and $`T=B`$. The constants in this order statement are uniform in $`k,B,D`$. Both constructions also work for short finite horizons, but need not minimize their seed or memory when $`N<b`$. For retained memory alone in the sustained problem, the $`D\le B`$ construction reaches the lower coefficient exactly; no optimal coefficient is claimed for complete transient hardware or the no-feedback protocol.
+for the required receiver hardware of sustained streams, at fixed forward rate $`k/n=1/3`$ and $`T=B`$. The constants in this order statement are uniform in $`k,B,D`$. Both constructions also work for short finite horizons, but need not minimize their seed or memory when $`N\lt b`$. For retained memory alone in the sustained problem, the $`D\le B`$ construction reaches the lower coefficient exactly; no optimal coefficient is claimed for complete transient hardware or the no-feedback protocol.
 
 The even-$`k`$ condition is only the physical realization of shares over $`\mathbb F_4`$: one ququart is two qubits. For an arbitrary positive integer $`k`$, pad to $`\kappa=2\lceil k/2\rceil`$ and use $`n=3\kappa`$. All bounds replace $`k`$ by $`\kappa\le2k`$ on the construction side, preserving the order law. Exact rate $`1/3`$ is claimed for the even widths, not for each unpadded odd width.
 

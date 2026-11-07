@@ -38,7 +38,7 @@ A normal reuse occurs exactly $`D`$ slots after the preceding use of that bank, 
 Let $`e`$ be the first erased normal-mode packet of an episode, and let $`r`$ be its physical bank label. Before this loss can be reported, the sender transmits sources $`S_e,\ldots,S_{e+D-1}`$, using the distinct banks
 
 ```math
-b_j=(r+j)\bmod D,\qquad 0\le j<D.
+b_j=(r+j)\bmod D,\qquad 0\le j\lt D.
 ```
 
 At the beginning of slot $`e+D`$, the first negative ACK arrives. Alice freezes the current register of every bank. She buffers every subsequent source, without encoding it, and sends only fixed padding until slot $`e+B`$.
@@ -53,8 +53,8 @@ The entire recovery below lies inside the guaranteed clean guard. For a continui
 
 | Slot | First $`k`$-qubit lane | Second lane | Third lane |
 |---|---|---|---|
-| $`e+B+j`$, $`0\le j<D`$ | Alice's held register from bank $`b_j`$ | Direct source $`S_{e+D+j}`$ | Fresh local Bell half for bank $`b_j`$ |
-| $`e+B+D+\ell`$, $`0\le\ell<B-D`$ | Direct source $`S_{e+2D+2\ell}`$ | Direct source $`S_{e+2D+2\ell+1}`$ | Fixed padding |
+| $`e+B+j`$, $`0\le j\lt D`$ | Alice's held register from bank $`b_j`$ | Direct source $`S_{e+D+j}`$ | Fresh local Bell half for bank $`b_j`$ |
+| $`e+B+D+\ell`$, $`0\le\ell\lt B-D`$ | Direct source $`S_{e+2D+2\ell}`$ | Direct source $`S_{e+2D+2\ell+1}`$ | Fixed padding |
 
 For the first row, if the bank's middle share was erased, Bob combines $`Q`$ with the arriving $`C`$ and recovers $`S_{e+j}`$ at time $`e+B+j`$, exactly its deadline. If the middle share arrived, that source has already been delivered and Bob discards the old pair after Alice's half arrives. In either case, the third lane installs a new independent shared pair for that bank. Its preparation is local and its forward transmission is charged.
 
@@ -106,11 +106,11 @@ Let $`N\ge1`$ be the common finite source horizon. No divisibility by $`B`$ or $
 
 If all outstanding normal transmissions succeeded, the recycling identity has already regenerated every bank. The last normal ACK arrives within $`D`$ further slots.
 
-If a first lost normal packet at $`e<N`$ is reported, repair all $`D`$ banks on the same schedule. A nominal source time $`e+j\ge N`$ means that bank was not used after the first loss. Its previous use preceded $`e`$ and succeeded, or it remains an unused initial pair. Alice can send that valid bank half, let Bob discard the old pair, and install the same fresh replacement. Real queued payloads are sent in FIFO order; missing payloads are replaced by padding.
+If a first lost normal packet at $`e\lt N`$ is reported, repair all $`D`$ banks on the same schedule. A nominal source time $`e+j\ge N`$ means that bank was not used after the first loss. Its previous use preceded $`e`$ and succeeded, or it remains an unused initial pair. Alice can send that valid bank half, let Bob discard the old pair, and install the same fresh replacement. Real queued payloads are sent in FIFO order; missing payloads are replaced by padding.
 
 All $`D`$ pairs are restored by $`e+B+D-1`$, and all real queued sources have been served by $`e+2B-1`$. Both times are less than $`N+2B`$. The channel promise itself certifies the repair slots, so termination need not wait another ACK round for their replacements. Padding may continue through slot $`N+2B-1`$ to give a fixed common ending time.
 
-Every normal success factors the new pair from the source. Every repair installs an independent locally prepared pair through a guaranteed clean transmission. Thus the final shared bank is exactly $`\Phi_2^{\otimes Dk}`$, independent of all delivered sources and their references. It can be swapped to designated initial bank labels. The argument covers $`N<D`$ and a stop in the middle of any normal or repair phase.
+Every normal success factors the new pair from the source. Every repair installs an independent locally prepared pair through a guaranteed clean transmission. Thus the final shared bank is exactly $`\Phi_2^{\otimes Dk}`$, independent of all delivered sources and their references. It can be swapped to designated initial bank labels. The argument covers $`N\lt D`$ and a stop in the middle of any normal or repair phase.
 
 With all physical positions charged, the finite-session rate is at least
 

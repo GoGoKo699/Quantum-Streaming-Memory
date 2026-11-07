@@ -17,6 +17,12 @@ Read model.md before applying any theorem. Do not turn the no-feedback rate opti
 - Two periodic histories and the exact/vanishing-error no-feedback rate bound: science/rate.md.
 - Prior results and precise inherited ingredients: references/RELATED_WORK.md; references/references.bib.
 - Reproduction, code hashes and limitations: verification/README.md; verification/run_all.py; verification/verification_report.json.
+- Learning entrypoint and the single Preskill anchor: learning/README.md; learning/PRESKILL_BRIDGE.md.
+- Common project map: learning/MILESTONES.md, exactly M01–M30, with 12 background/preliminary and 18 narrative/innovation targets. Follow the stated earlier dependencies and use each scientific page as the authoritative home for its proof.
+
+## Educational source
+
+The selected source is John Preskill's Quantum Information lecture notes/book drafts: Chapter 7, Quantum Error Correction, updated March 2026; Chapter 10, Quantum Shannon Theory, updated June 2025. The bridge links the author-hosted PDFs and distinguishes their actual title-page dates from the older Chapter 10 filename. Use the selected sections as foundations, the primary research literature for attribution, and the repository's local proofs for the streaming-specific steps. The map records shared understanding targets; it contains no personal assessment or progress record.
 
 ## Scientific distinctions to preserve
 

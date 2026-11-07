@@ -45,7 +45,7 @@ S(Q\mid Y)\ge b\bigl[\log_2d-f_d(\varepsilon)\bigr],
 M\ge b\bigl[\log_2d-f_d(\varepsilon)\bigr].
 ```
 
-In particular, exact transmission requires $`M\ge kb`$. If only $`N_{\mathrm{rem}}<b`$ source arrivals remain, the same theorem and proof use $`b'=\min\{D,B,N_{\mathrm{rem}}\}`$ in place of $`b`$. Shorter finite tails therefore have a correspondingly smaller lower bound. A simpler approximate expression for the full $`b`$-source window is
+In particular, exact transmission requires $`M\ge kb`$. If only $`N_{\mathrm{rem}}\lt b`$ source arrivals remain, the same theorem and proof use $`b'=\min\{D,B,N_{\mathrm{rem}}\}`$ in place of $`b`$. Shorter finite tails therefore have a correspondingly smaller lower bound. A simpler approximate expression for the full $`b`$-source window is
 
 ```math
 M\ge\min\{D,B\}\bigl[(1-2\varepsilon)k-h_2(\varepsilon)\bigr].
@@ -108,7 +108,7 @@ Here **$`Q`$ is the receiver memory at the initial cut**, not its branch-depende
 
 ### The late burst gives recovery from $`QAY`$
 
-For $`0\le i<b`$, source $`i`$ is due at $`B+i`$, and
+For $`0\le i\lt b`$, source $`i`$ is due at $`B+i`$, and
 
 ```math
 b\le B+i\le b+B-1.
@@ -217,7 +217,7 @@ The common prefix acts only on the sender and fresh inputs. Its trace-preserving
 ```math
 S(Q\mid YZ)
 =\sum_{y,z}p_y p(z\mid y)
-S\!\left(\operatorname{Tr}_{E_0}|\psi_{yz}\rangle\langle\psi_{yz}|\right).
+S\!\left(\mathrm{Tr}_{E_0}|\psi_{yz}\rangle\langle\psi_{yz}|\right).
 ```
 
 Minimizing over these ensembles gives the stated convex-roof bound. The proof never assumes that every artificial ensemble component separately meets the fidelity promise.
