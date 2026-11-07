@@ -6,7 +6,7 @@ Under the [sliding-span packet model](model.md) with window length $`W=2B+1`$, d
 \frac{k}{n}=\frac13.
 ```
 
-This benchmark calibrates the memory comparison: the delayed-ACK construction operates at the optimal no-feedback rate while reducing receiver storage when $`D<B`$. No feedback-assisted capacity claim is made.
+This benchmark calibrates the memory comparison: the delayed-ACK construction operates at the optimal no-feedback rate while reducing receiver storage when $`D\lt B`$. No feedback-assisted capacity claim is made.
 
 The converse uses the same established overlapping-recovery mechanism as the [memory theorem](converse.md). It is an application of the [Singleton and storage-intersection antecedents](../references/RELATED_WORK.md#ghw2022), not a new entropy inequality.
 
@@ -99,7 +99,7 @@ S(Q_0C\mid Y)
 \le S(Q_0\mid Y)+n|C|.
 ```
 
-There is no term involving the size of the free classical record. Write $`H=3Ba+r`$, where $`0\le r<3B`$. The common positions occur in complete final blocks and any surviving final-block suffix:
+There is no term involving the size of the free classical record. Write $`H=3Ba+r`$, where $`0\le r\lt 3B`$. The common positions occur in complete final blocks and any surviving final-block suffix:
 
 ```math
 |C|=Ba+\max\{0,r-2B\}\le\frac H3=\frac{L+B}3.

@@ -36,6 +36,12 @@ The [scientific entrypoint](science/README.md) connects the account. For a quick
 
 The entropy inequality, threshold secret sharing, communication-cipher recycling and catalytic renewal are established ingredients. The contribution is the delayed-ACK causal resource bound and its matching sustained deadline schedule. The [comparison](references/RELATED_WORK.md) identifies the relevant primary sources and avoids attributing those ingredients to this project.
 
+## Learn the framework
+
+The [learning route](learning/README.md) uses one educational anchor: **John Preskill's Quantum Information lecture notes**, with Chapter 7 updated March 2026 and Chapter 10 updated June 2025. The [source bridge](learning/PRESKILL_BRIDGE.md) identifies the relevant passages, translates their notation and explains the additional causal and scheduling arguments needed here.
+
+The [30-milestone map](learning/MILESTONES.md) develops 12 background and preliminary targets followed by 18 targets for the project's narrative and contribution. Each target connects a central question, dependencies and source pointers. Readers can use the map to locate a missing connection or follow the complete story from coherent recovery to the memory law and its scope.
+
 ## Reproduce the checks
 
 Use Python 3.11 or newer with the pinned dependency, then run from the repository root:

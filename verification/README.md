@@ -45,3 +45,7 @@ Finite cases do not enumerate every admissible infinite history or prove the arb
 The schedule programs treat the separately checked quantum primitive as a correct subroutine. Their memory counts concern retained registers at cuts. Incoming-packet and local preparation workspace are charged analytically in the construction pages. Optional ordered release is also proved analytically; it is not reported as a simulated check.
 
 The suite does not test faulty hardware, unreliable ACKs, unrestricted loss histories, literature priority, or actual GitHub mathematical rendering. Source/code verification and a hosted visual review are different checks.
+
+## Inspect the hosted mathematics
+
+The separate [GitHub rendering check](references/hosted-rendering.md) inventories every tracked Markdown page at an exact commit, compares each expression with actual hosted MathML at wide and narrow viewports, and retains screenshots and diagnostics. Its workflow has read-only repository permission. An automated structure pass must be followed by inspection of the actual screenshots; it supplies evidence about mathematical display, not another proof of the science.
