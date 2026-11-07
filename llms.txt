@@ -1,0 +1,31 @@
+# Quantum Streaming Memory
+
+Question: How does delayed knowledge of packet erasure constrain the coherent storage needed by a receiver handling fresh unknown quantum states with a hard deadline?
+
+Main result: For sustained streams, ideal local operations, the W=2B+1 sliding-span erasure family, reliable ACK-only feedback of delay D, and deadline T=B, required receiver quantum memory has order k min(D,B). The exact clean-cut lower bound is k min(D,B), provided that many real sources remain. Shorter finite tails use k min(D,B,r). All receiver quantum resources and forward communication are charged. Finite Bell assistance is returned by the constructions.
+
+Read model.md before applying any theorem. Do not turn the no-feedback rate optimum 1/3 into a feedback-capacity claim; do not remove the clean-cut, remaining-horizon, charged-assistance, inaccessible-output, even-width or deterministic-window qualifications.
+
+## Routes
+
+- Scientific overview and exact assumptions: README.md; science/README.md; science/model.md.
+- Physical story and complete B=4,D=2 schedule: science/interpretation.md.
+- Arbitrary-code converse, individual-message fidelity and initial entanglement: science/converse.md.
+- Coherent finite-field decoder and exact successful-transmission recycling: science/primitive.md.
+- ACK-delayed bank rotation, repair, deadline proof, finite stop and optional ordered release: science/feedback_protocol.md.
+- Source-independent advance shares, all-N tail, sender/receiver storage and ordered release: science/no_feedback_protocol.md.
+- Two periodic histories and the exact/vanishing-error no-feedback rate bound: science/rate.md.
+- Prior results and precise inherited ingredients: references/RELATED_WORK.md; references/references.bib.
+- Reproduction, code hashes and limitations: verification/README.md; verification/run_all.py; verification/verification_report.json.
+
+## Scientific distinctions to preserve
+
+- M is retained coherent dimension in the lower bound, not the entropy or average occupation of a freely larger register. The upper hardware counts add incoming-packet workspace.
+- D is the arrival delay of an erasure flag only. The model supplies neither reverse quantum communication nor unrestricted message-dependent classical feedback.
+- QSS/Vernam encoding, overlap entropy and finite catalytic renewal are inherited. The causal reduction and matched sustained schedule are the operational contribution being documented.
+- Source-independent advance entanglement is not access to future quantum data. A lost advance share may be held by the environment and recovery still works.
+- Outputs are labeled and may be released immediately. Once released they are inaccessible; ordered release is a distinct counted variant.
+- Both finite protocols return the initial amount of pure shared entanglement after a charged flush. A catalyst growing linearly with the source horizon is not within the rate converse's assistance assumption.
+- Finite symbolic and numerical checks do not prove universal entropy statements or certify literature priority.
+
+Each scientific page is the authoritative home for its statements and proof. Use the model's common conventions and the related-work account when explaining or extending a result.

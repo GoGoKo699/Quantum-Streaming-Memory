@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-11-07T08:07:58Z",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "source_sha256": {
+    "verify_qss_primitive.py": "0595a5a0a20b4ca979ce118e5a8a2196a7e48a0054f24de59c43d7d8b244c6a9",
+    "verify_streaming_schedule.py": "449eadd145238de5ce53b5fbaca616017594242cd37648b2e34ab1e7ea475f9c",
+    "verify_no_feedback_pipeline.py": "178de7dbc6f70d48dab61219d06a9b6ed736f1069ffdff089aec98f49f84c79f",
+    "run_all.py": "d99ebd847fecfb179fe048d37eecb3782101a3abb921268f08d92b5b8590616e",
+    "requirements.txt": "7bd6b8946940b79948c548c8048e545684b91c8edc9444d8dfc0c8f76a97c0a7"
+  },
+  "qss": {
+    "scope": "Inherited F4 QSS encoder, all single-share erasures, and recycled entanglement",
+    "physical_grouping": "One ququart is two physical qubits; fixed alphabet independent of B,D",
+    "checks": [
+      {
+        "erased_share": "C",
+        "decoder_is_basis_permutation": true,
+        "choi_output_and_syndrome_fidelity": 1.0,
+        "max_amplitude_error": 0.0
+      },
+      {
+        "erased_share": "A",
+        "decoder_is_basis_permutation": true,
+        "choi_output_and_syndrome_fidelity": 1.0,
+        "max_amplitude_error": 0.0
+      },
+      {
+        "erased_share": "Q",
+        "decoder_is_basis_permutation": true,
+        "choi_output_and_syndrome_fidelity": 1.0,
+        "max_amplitude_error": 0.0
+      }
+    ],
+    "each_single_share_independent_of_reference": true,
+    "successful_QA_decoding_returns_exact_EPR_with_sender_C": true,
+    "limitations": "Finite algebra check; no theorem, literature priority, or schedule certification"
+  },
+  "feedback_schedule": {
+    "status": "PASS",
+    "model": {
+      "B": "1..8",
+      "D": "1..B",
+      "W": "2B+1",
+      "physical_packet_capacity_in_source_groups": 3,
+      "receiver_retained_quantum_groups": "D",
+      "source_deadline": "arrival+B",
+      "ack_available": "send_time+D"
+    },
+    "case_counts": {
+      "clean": 36,
+      "single_contiguous": 3750,
+      "earliest_repeated": 9751,
+      "all_hole_masks": 14199,
+      "finite_horizon": 5971
+    },
+    "total_cases": 33707,
+    "aggregate_checks": {
+      "max_delay_minus_B": 0,
+      "max_packet_groups": 3,
+      "max_sender_groups_over_B_plus_1": 0,
+      "recovery_episodes": 91118,
+      "normal_bank_reuses": 1212478,
+      "refresh_bank_reuses": 355122,
+      "max_flush_slots": 8
+    },
+    "runtime_seconds": 4.473,
+    "limitations": [
+      "Symbolic schedule audit; QSS quantum identity is verified separately.",
+      "Finite tests support, and do not replace, the analytic induction.",
+      "Outputs may be released out of source order; extra in-order buffering is not simulated."
+    ]
+  },
+  "no_feedback_pipeline": {
+    "status": "PASS",
+    "B_range": "1..8",
+    "W": "2B+1",
+    "case_counts": {
+      "clean_all_horizons": 168,
+      "single_bursts_all_horizons": 25032,
+      "earliest_repeated": 3000,
+      "hole_masks_and_short_horizons": 10017
+    },
+    "total_cases": 38217,
+    "aggregate_checks": {
+      "max_receiver_excess_over_2B": 0,
+      "max_sender_excess_over_2B": 0,
+      "max_packet_groups": 3,
+      "erased_advance_shares_later_recovered": 127715,
+      "decoder_pairs": {
+        "AQ": 823703,
+        "CQ": 161384,
+        "AC": 127715
+      }
+    },
+    "runtime_seconds": 5.664,
+    "verified_invariants": [
+      "Every actual and dummy source is recovered by its arrival+B deadline.",
+      "Every emitted packet has at most three source-sized shares.",
+      "Receiver retained quantum groups never exceed 2B, including returned dummy outputs.",
+      "Sender retained quantum groups never exceed 2B, including dummy reference halves.",
+      "For every N, the schedule ends after exactly N+2B slots with exactly B shared Bell groups.",
+      "Every initial seed and final dummy label is accounted for, including N<B.",
+      "Lost Q shares before source arrival are subsequently decoded from A,C."
+    ],
+    "limitations": [
+      "Symbolic share/register bookkeeping, using the separately verified QSS identity.",
+      "Finite cases supplement the analytic proof and do not exhaust all admissible infinite streams.",
+      "Retained storage is measured after each slot; incoming packet workspace is charged separately."
+    ]
+  },
+  "scope": "Finite coherent-algebra and symbolic schedule checks; universal claims use the written proofs."
+}

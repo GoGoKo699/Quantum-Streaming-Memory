@@ -1,0 +1,978 @@
+{
+  "status": "PASS",
+  "model": {
+    "B": "1..8",
+    "D": "1..B",
+    "W": "2B+1",
+    "physical_packet_capacity_in_source_groups": 3,
+    "receiver_retained_quantum_groups": "D",
+    "source_deadline": "arrival+B",
+    "ack_available": "send_time+D"
+  },
+  "case_counts": {
+    "clean": 36,
+    "single_contiguous": 3750,
+    "earliest_repeated": 9751,
+    "all_hole_masks": 14199,
+    "finite_horizon": 5971
+  },
+  "total_cases": 33707,
+  "aggregate_checks": {
+    "max_delay_minus_B": 0,
+    "max_packet_groups": 3,
+    "max_sender_groups_over_B_plus_1": 0,
+    "recovery_episodes": 91118,
+    "normal_bank_reuses": 1212478,
+    "refresh_bank_reuses": 355122,
+    "max_flush_slots": 8
+  },
+  "runtime_seconds": 4.473,
+  "limitations": [
+    "Symbolic schedule audit; QSS quantum identity is verified separately.",
+    "Finite tests support, and do not replace, the analytic induction.",
+    "Outputs may be released out of source order; extra in-order buffering is not simulated."
+  ],
+  "phase_rotation_sample": {
+    "B": 5,
+    "D": 3,
+    "N": 50,
+    "erasures": [
+      2,
+      4,
+      6,
+      17,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "outcome": {
+      "max_packet_groups": 3,
+      "max_receiver_bank_groups": 3,
+      "max_sender_groups_before_send": 6,
+      "max_source_delay": 5,
+      "recovery_episodes": 3,
+      "normal_bank_reuses": 17,
+      "refresh_bank_reuses": 9,
+      "completion_slot": 52,
+      "forward_slots": 53,
+      "input_slots": 50,
+      "flush_slots": 3,
+      "seed_pairs_returned_in_source_groups": 3,
+      "trace": [
+        {
+          "slot": 0,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 0,
+            "bank": 0,
+            "generation": 1
+          }
+        },
+        {
+          "slot": 1,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 1,
+            "bank": 1,
+            "generation": 1
+          }
+        },
+        {
+          "slot": 2,
+          "erased": true,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": false,
+            "groups": 1,
+            "source": 2,
+            "bank": 2,
+            "generation": 1
+          }
+        },
+        {
+          "slot": 3,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 3,
+            "bank": 0,
+            "generation": 2
+          }
+        },
+        {
+          "slot": 4,
+          "erased": true,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": false,
+            "groups": 1,
+            "source": 4,
+            "bank": 1,
+            "generation": 2
+          }
+        },
+        {
+          "slot": 5,
+          "erased": false,
+          "episode": [
+            2,
+            2
+          ],
+          "queue": [
+            5
+          ],
+          "packet": {
+            "kind": "padding",
+            "received": true,
+            "groups": 0
+          }
+        },
+        {
+          "slot": 6,
+          "erased": true,
+          "episode": [
+            2,
+            2
+          ],
+          "queue": [
+            5,
+            6
+          ],
+          "packet": {
+            "kind": "padding",
+            "received": false,
+            "groups": 0
+          }
+        },
+        {
+          "slot": 7,
+          "erased": false,
+          "episode": [
+            2,
+            2
+          ],
+          "queue": [
+            6,
+            7
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 2,
+            "generation": 2,
+            "repaired_source": 2,
+            "direct": [
+              5
+            ]
+          }
+        },
+        {
+          "slot": 8,
+          "erased": false,
+          "episode": [
+            2,
+            2
+          ],
+          "queue": [
+            7,
+            8
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 0,
+            "generation": 3,
+            "repaired_source": null,
+            "direct": [
+              6
+            ]
+          }
+        },
+        {
+          "slot": 9,
+          "erased": false,
+          "episode": [
+            2,
+            2
+          ],
+          "queue": [
+            8,
+            9
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 1,
+            "generation": 3,
+            "repaired_source": 4,
+            "direct": [
+              7
+            ]
+          }
+        },
+        {
+          "slot": 10,
+          "erased": false,
+          "episode": [
+            2,
+            2
+          ],
+          "queue": [
+            10
+          ],
+          "packet": {
+            "kind": "catchup",
+            "received": true,
+            "groups": 2,
+            "direct": [
+              8,
+              9
+            ]
+          }
+        },
+        {
+          "slot": 11,
+          "erased": false,
+          "episode": [
+            2,
+            2
+          ],
+          "queue": [],
+          "packet": {
+            "kind": "catchup",
+            "received": true,
+            "groups": 2,
+            "direct": [
+              10,
+              11
+            ]
+          }
+        },
+        {
+          "slot": 12,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 12,
+            "bank": 2,
+            "generation": 3
+          }
+        },
+        {
+          "slot": 13,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 13,
+            "bank": 0,
+            "generation": 4
+          }
+        },
+        {
+          "slot": 14,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 14,
+            "bank": 1,
+            "generation": 4
+          }
+        },
+        {
+          "slot": 15,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 15,
+            "bank": 2,
+            "generation": 4
+          }
+        },
+        {
+          "slot": 16,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 16,
+            "bank": 0,
+            "generation": 5
+          }
+        },
+        {
+          "slot": 17,
+          "erased": true,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": false,
+            "groups": 1,
+            "source": 17,
+            "bank": 1,
+            "generation": 5
+          }
+        },
+        {
+          "slot": 18,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 18,
+            "bank": 2,
+            "generation": 5
+          }
+        },
+        {
+          "slot": 19,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 19,
+            "bank": 0,
+            "generation": 6
+          }
+        },
+        {
+          "slot": 20,
+          "erased": false,
+          "episode": [
+            17,
+            1
+          ],
+          "queue": [
+            20
+          ],
+          "packet": {
+            "kind": "padding",
+            "received": true,
+            "groups": 0
+          }
+        },
+        {
+          "slot": 21,
+          "erased": false,
+          "episode": [
+            17,
+            1
+          ],
+          "queue": [
+            20,
+            21
+          ],
+          "packet": {
+            "kind": "padding",
+            "received": true,
+            "groups": 0
+          }
+        },
+        {
+          "slot": 22,
+          "erased": false,
+          "episode": [
+            17,
+            1
+          ],
+          "queue": [
+            21,
+            22
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 1,
+            "generation": 6,
+            "repaired_source": 17,
+            "direct": [
+              20
+            ]
+          }
+        },
+        {
+          "slot": 23,
+          "erased": false,
+          "episode": [
+            17,
+            1
+          ],
+          "queue": [
+            22,
+            23
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 2,
+            "generation": 6,
+            "repaired_source": null,
+            "direct": [
+              21
+            ]
+          }
+        },
+        {
+          "slot": 24,
+          "erased": false,
+          "episode": [
+            17,
+            1
+          ],
+          "queue": [
+            23,
+            24
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 0,
+            "generation": 7,
+            "repaired_source": null,
+            "direct": [
+              22
+            ]
+          }
+        },
+        {
+          "slot": 25,
+          "erased": false,
+          "episode": [
+            17,
+            1
+          ],
+          "queue": [
+            25
+          ],
+          "packet": {
+            "kind": "catchup",
+            "received": true,
+            "groups": 2,
+            "direct": [
+              23,
+              24
+            ]
+          }
+        },
+        {
+          "slot": 26,
+          "erased": false,
+          "episode": [
+            17,
+            1
+          ],
+          "queue": [],
+          "packet": {
+            "kind": "catchup",
+            "received": true,
+            "groups": 2,
+            "direct": [
+              25,
+              26
+            ]
+          }
+        },
+        {
+          "slot": 27,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 27,
+            "bank": 1,
+            "generation": 7
+          }
+        },
+        {
+          "slot": 28,
+          "erased": true,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": false,
+            "groups": 1,
+            "source": 28,
+            "bank": 2,
+            "generation": 7
+          }
+        },
+        {
+          "slot": 29,
+          "erased": true,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": false,
+            "groups": 1,
+            "source": 29,
+            "bank": 0,
+            "generation": 8
+          }
+        },
+        {
+          "slot": 30,
+          "erased": true,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": false,
+            "groups": 1,
+            "source": 30,
+            "bank": 1,
+            "generation": 8
+          }
+        },
+        {
+          "slot": 31,
+          "erased": true,
+          "episode": [
+            28,
+            2
+          ],
+          "queue": [
+            31
+          ],
+          "packet": {
+            "kind": "padding",
+            "received": false,
+            "groups": 0
+          }
+        },
+        {
+          "slot": 32,
+          "erased": true,
+          "episode": [
+            28,
+            2
+          ],
+          "queue": [
+            31,
+            32
+          ],
+          "packet": {
+            "kind": "padding",
+            "received": false,
+            "groups": 0
+          }
+        },
+        {
+          "slot": 33,
+          "erased": false,
+          "episode": [
+            28,
+            2
+          ],
+          "queue": [
+            32,
+            33
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 2,
+            "generation": 8,
+            "repaired_source": 28,
+            "direct": [
+              31
+            ]
+          }
+        },
+        {
+          "slot": 34,
+          "erased": false,
+          "episode": [
+            28,
+            2
+          ],
+          "queue": [
+            33,
+            34
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 0,
+            "generation": 9,
+            "repaired_source": 29,
+            "direct": [
+              32
+            ]
+          }
+        },
+        {
+          "slot": 35,
+          "erased": false,
+          "episode": [
+            28,
+            2
+          ],
+          "queue": [
+            34,
+            35
+          ],
+          "packet": {
+            "kind": "repair",
+            "received": true,
+            "groups": 3,
+            "bank": 1,
+            "generation": 9,
+            "repaired_source": 30,
+            "direct": [
+              33
+            ]
+          }
+        },
+        {
+          "slot": 36,
+          "erased": false,
+          "episode": [
+            28,
+            2
+          ],
+          "queue": [
+            36
+          ],
+          "packet": {
+            "kind": "catchup",
+            "received": true,
+            "groups": 2,
+            "direct": [
+              34,
+              35
+            ]
+          }
+        },
+        {
+          "slot": 37,
+          "erased": false,
+          "episode": [
+            28,
+            2
+          ],
+          "queue": [],
+          "packet": {
+            "kind": "catchup",
+            "received": true,
+            "groups": 2,
+            "direct": [
+              36,
+              37
+            ]
+          }
+        },
+        {
+          "slot": 38,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 38,
+            "bank": 2,
+            "generation": 9
+          }
+        },
+        {
+          "slot": 39,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 39,
+            "bank": 0,
+            "generation": 10
+          }
+        },
+        {
+          "slot": 40,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 40,
+            "bank": 1,
+            "generation": 10
+          }
+        },
+        {
+          "slot": 41,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 41,
+            "bank": 2,
+            "generation": 10
+          }
+        },
+        {
+          "slot": 42,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 42,
+            "bank": 0,
+            "generation": 11
+          }
+        },
+        {
+          "slot": 43,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 43,
+            "bank": 1,
+            "generation": 11
+          }
+        },
+        {
+          "slot": 44,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 44,
+            "bank": 2,
+            "generation": 11
+          }
+        },
+        {
+          "slot": 45,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 45,
+            "bank": 0,
+            "generation": 12
+          }
+        },
+        {
+          "slot": 46,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 46,
+            "bank": 1,
+            "generation": 12
+          }
+        },
+        {
+          "slot": 47,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 47,
+            "bank": 2,
+            "generation": 12
+          }
+        },
+        {
+          "slot": 48,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 48,
+            "bank": 0,
+            "generation": 13
+          }
+        },
+        {
+          "slot": 49,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "normal",
+            "received": true,
+            "groups": 1,
+            "source": 49,
+            "bank": 1,
+            "generation": 13
+          }
+        },
+        {
+          "slot": 50,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "padding",
+            "received": true,
+            "groups": 0
+          }
+        },
+        {
+          "slot": 51,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "padding",
+            "received": true,
+            "groups": 0
+          }
+        },
+        {
+          "slot": 52,
+          "erased": false,
+          "episode": null,
+          "queue": [],
+          "packet": {
+            "kind": "padding",
+            "received": true,
+            "groups": 0
+          }
+        }
+      ],
+      "delivered": {
+        "0": 0,
+        "1": 1,
+        "3": 3,
+        "2": 7,
+        "5": 7,
+        "6": 8,
+        "4": 9,
+        "7": 9,
+        "8": 10,
+        "9": 10,
+        "10": 11,
+        "11": 11,
+        "12": 12,
+        "13": 13,
+        "14": 14,
+        "15": 15,
+        "16": 16,
+        "18": 18,
+        "19": 19,
+        "17": 22,
+        "20": 22,
+        "21": 23,
+        "22": 24,
+        "23": 25,
+        "24": 25,
+        "25": 26,
+        "26": 26,
+        "27": 27,
+        "28": 33,
+        "31": 33,
+        "29": 34,
+        "32": 34,
+        "30": 35,
+        "33": 35,
+        "34": 36,
+        "35": 36,
+        "36": 37,
+        "37": 37,
+        "38": 38,
+        "39": 39,
+        "40": 40,
+        "41": 41,
+        "42": 42,
+        "43": 43,
+        "44": 44,
+        "45": 45,
+        "46": 46,
+        "47": 47,
+        "48": 48,
+        "49": 49
+      }
+    }
+  }
+}
