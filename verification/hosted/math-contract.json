@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "expressions": [
+    {
+      "path": "README.md",
+      "index": 1,
+      "source_sha256": "63542e18bf028ebeff6e45d2614ad79b70c77436dd1054dc86e947e0f1ab5431",
+      "required_text": [
+        "M",
+        "min",
+        "Θ",
+        "k",
+        "D",
+        "B",
+        "T=B"
+      ]
+    },
+    {
+      "path": "README.md",
+      "index": 20,
+      "source_sha256": "3006563a798e92ef8616072bd006328373ef067031bb42f20e38be8060d1dc13",
+      "required_text": [
+        "D>B"
+      ]
+    }
+  ]
+}

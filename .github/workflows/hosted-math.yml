@@ -1,0 +1,51 @@
+name: Check hosted mathematics
+
+on:
+  push:
+    paths:
+      - '**.md'
+      - '**.markdown'
+      - '**.mdown'
+      - '**.mkdn'
+      - '**.mkd'
+      - 'verification/hosted/**'
+      - '.github/workflows/hosted-math.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  github-math:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out the exact source revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Install isolated browser and math dependencies
+        run: |
+          npm install --prefix "$RUNNER_TEMP/math-deps" playwright@1.56.1 mathjax-full@3.2.1
+          "$RUNNER_TEMP/math-deps/node_modules/.bin/playwright" install --with-deps chromium
+
+      - name: Compare actual GitHub mathematics with pinned source
+        env:
+          NODE_PATH: ${{ runner.temp }}/math-deps/node_modules
+        run: |
+          node verification/hosted/capture_hosted_math.cjs \
+            --root "$GITHUB_WORKSPACE" \
+            --repository "$GITHUB_REPOSITORY" \
+            --revision "$GITHUB_SHA" \
+            --contract verification/hosted/math-contract.json \
+            --output "$RUNNER_TEMP/hosted-math"
+
+      - name: Preserve captures and diagnostic reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hosted-math-${{ github.sha }}
+          path: ${{ runner.temp }}/hosted-math/
+          if-no-files-found: error
+          retention-days: 30
