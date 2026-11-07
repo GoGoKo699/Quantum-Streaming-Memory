@@ -1,0 +1,27 @@
+{
+  "scope": "Inherited F4 QSS encoder, all single-share erasures, and recycled entanglement",
+  "physical_grouping": "One ququart is two physical qubits; fixed alphabet independent of B,D",
+  "checks": [
+    {
+      "erased_share": "C",
+      "decoder_is_basis_permutation": true,
+      "choi_output_and_syndrome_fidelity": 1.0,
+      "max_amplitude_error": 0.0
+    },
+    {
+      "erased_share": "A",
+      "decoder_is_basis_permutation": true,
+      "choi_output_and_syndrome_fidelity": 1.0,
+      "max_amplitude_error": 0.0
+    },
+    {
+      "erased_share": "Q",
+      "decoder_is_basis_permutation": true,
+      "choi_output_and_syndrome_fidelity": 1.0,
+      "max_amplitude_error": 0.0
+    }
+  ],
+  "each_single_share_independent_of_reference": true,
+  "successful_QA_decoding_returns_exact_EPR_with_sender_C": true,
+  "limitations": "Finite algebra check; no theorem, literature priority, or schedule certification"
+}
